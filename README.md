@@ -30,7 +30,7 @@ using this package add lines into ./Packages/manifest.json like next sample:
 ```
 {
   "dependencies": {
-    "com.sourcemuch.quickeditor.buildflow": "https://github.com/henry-yuxi/QuickEditor.ToolKit.git#0.0.1",
+    "com.sourcemuch.quickeditor.toolkit": "https://github.com/henry-yuxi/QuickEditor.ToolKit.git#0.0.1",
   }
 }
 ```
