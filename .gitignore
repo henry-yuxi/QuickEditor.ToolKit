@@ -1,0 +1,14 @@
+
+QuickEditor.ToolKit/Temp/
+
+QuickEditor.ToolKit/obj/
+
+QuickEditor.ToolKit/Logs/
+
+QuickEditor.ToolKit/Library/
+
+QuickEditor.ToolKit/.vs/
+
+*.csproj
+
+QuickEditor.ToolKit/Packages/

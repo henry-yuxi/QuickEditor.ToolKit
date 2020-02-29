@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c725a0a58ec6cdf4586142d20481b7c6, type: 3}
+  m_Name: AssetImportRuleSettings
+  m_EditorClassIdentifier: 
+  AudioImportRuleSettings: []
+  ModelImportRuleSettings: []
+  TextureImportRuleSettings:
+  - IsEnabled: 1
+    RuleName: New Asset Rule
+    FolderFilter: /Texture
+    FileFilter: 
+    SuffixFilter: .png
+    textureType: 1
+    textureShape: 1
+    allowsAlphaSplitting: 0
+    isReadable: 0
+    mipmapEnabled: 0
+    npotScale: 0
+    wrapMode: 1
+    filterMode: 1
+    anisoLevel: 1
+    autoMaxSize: 1
+    maxTextureSize: 1024
+    textureCompression: 1
+    compressionQuality: 100
+    StandaloneTextureImporterSettings:
+      m_Name: DefaultTexturePlatform
+      m_Overridden: 0
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_AndroidETC2FallbackOverride: 0
+    AndroidTextureImporterSettings:
+      m_Name: DefaultTexturePlatform
+      m_Overridden: 0
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_AndroidETC2FallbackOverride: 0
+    iOSTextureImporterSettings:
+      m_Name: DefaultTexturePlatform
+      m_Overridden: 0
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_AndroidETC2FallbackOverride: 0
