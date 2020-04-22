@@ -19,8 +19,8 @@ MonoBehaviour:
     RuleName: New Asset Rule
     FolderFilter: /Texture
     FileFilter: 
-    SuffixFilter: .png
-    textureType: 1
+    SuffixFilter: .png;.jpg
+    textureType: 0
     textureShape: 1
     allowsAlphaSplitting: 0
     isReadable: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
       m_Overridden: 0
       m_MaxTextureSize: 2048
       m_ResizeAlgorithm: 0
-      m_TextureFormat: -1
+      m_TextureFormat: 48
       m_TextureCompression: 1
       m_CompressionQuality: 50
       m_CrunchedCompression: 0

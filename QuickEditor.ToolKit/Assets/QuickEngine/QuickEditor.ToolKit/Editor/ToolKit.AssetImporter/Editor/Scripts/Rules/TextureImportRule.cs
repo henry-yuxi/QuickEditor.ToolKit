@@ -91,8 +91,8 @@ namespace QuickEditor.ToolKit
             importer.maxTextureSize = maxTextureSize;
             importer.textureCompression = textureCompression;
 
-            //SetAndroidTextureImporterSettings(importer, AndroidCompressFormat);
-            //SetiPhoneTextureImporterSettings(importer, iOSCompressFormat);
+            SetAndroidTextureImporterSettings(importer, AndroidTextureImporterSettings.format);
+            SetiPhoneTextureImporterSettings(importer, iOSTextureImporterSettings.format);
         }
 
         private void SetAndroidTextureImporterSettings(TextureImporter importer, TextureImporterFormat format)

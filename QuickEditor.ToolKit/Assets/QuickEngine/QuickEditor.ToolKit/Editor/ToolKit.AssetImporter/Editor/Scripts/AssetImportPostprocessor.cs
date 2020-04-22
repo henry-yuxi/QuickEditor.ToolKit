@@ -112,7 +112,7 @@
 
             string[] pathFilterSplit = rule.FolderFilter.Split(filterSeparator, System.StringSplitOptions.RemoveEmptyEntries);
             string[] filenameFilterSplit = rule.FileFilter.Split(filterSeparator, System.StringSplitOptions.RemoveEmptyEntries);
-            string[] suffixFilterSplit = rule.FileFilter.Split(filterSeparator, System.StringSplitOptions.RemoveEmptyEntries);
+            string[] suffixFilterSplit = rule.SuffixFilter.Split(filterSeparator, System.StringSplitOptions.RemoveEmptyEntries);
 
             for (int i = 0; i < pathFilterSplit.Length; i++)
             {
