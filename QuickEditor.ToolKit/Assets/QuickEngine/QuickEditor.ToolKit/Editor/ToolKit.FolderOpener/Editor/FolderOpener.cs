@@ -4,6 +4,7 @@ namespace QuickEditor.ToolKit
 {
     using System.IO;
     using UnityEditor;
+    using UnityEditorInternal;
     using UnityEngine;
 
     public class FolderOpener
@@ -14,7 +15,7 @@ namespace QuickEditor.ToolKit
         /// <summary>
         /// 打开 Data Path 文件夹。
         /// </summary>
-        [MenuItem(FolderOpenerMenuEntry + "Application.dataPath", false, FolderOpenerMenuEntryPriority + 103)]
+        [MenuItem(FolderOpenerMenuEntry + "Application.dataPath", false, FolderOpenerMenuEntryPriority + 100)]
         private static void OpenDataPath()
         {
             RevealInFinder(Application.dataPath);
@@ -41,7 +42,7 @@ namespace QuickEditor.ToolKit
         /// <summary>
         /// 打开 Temporary Cache Path 文件夹。
         /// </summary>
-        [MenuItem(FolderOpenerMenuEntry + "Application.temporaryCachePath", false, FolderOpenerMenuEntryPriority + 100)]
+        [MenuItem(FolderOpenerMenuEntry + "Application.temporaryCachePath", false, FolderOpenerMenuEntryPriority + 103)]
         private static void OpenCachePath()
         {
             RevealInFinder(Application.temporaryCachePath);
@@ -61,13 +62,27 @@ namespace QuickEditor.ToolKit
             RevealInFinder(path);
         }
 
-        [MenuItem(FolderOpenerMenuEntry + "Editor Application Path", false, FolderOpenerMenuEntryPriority + 200)]
+        [MenuItem(FolderOpenerMenuEntry + "Asset Backup Folder", false, FolderOpenerMenuEntryPriority + 300)]
+        public static void OpenAEBackupFolder()
+        {
+            var folder = Path.Combine(Application.persistentDataPath, "AEBackup");
+            Directory.CreateDirectory(folder);
+            RevealInFinder(folder);
+        }
+
+        [MenuItem(FolderOpenerMenuEntry + "EditorApplication.applicationContentsPath", false, FolderOpenerMenuEntryPriority + 400)]
+        private static void OpenApplicationContentsPath()
+        {
+            RevealInFinder(EditorApplication.applicationContentsPath);
+        }
+
+        [MenuItem(FolderOpenerMenuEntry + "EditorApplication.applicationPath", false, FolderOpenerMenuEntryPriority + 401)]
         private static void OpenUnityEditorPath()
         {
             RevealInFinder(new FileInfo(EditorApplication.applicationPath).Directory.FullName);
         }
 
-        [MenuItem(FolderOpenerMenuEntry + "Editor Log Folder", false, FolderOpenerMenuEntryPriority + 200)]
+        [MenuItem(FolderOpenerMenuEntry + "Editor Log Folder", false, FolderOpenerMenuEntryPriority + 402)]
         private static void OpenEditorLogFolderPath()
         {
 #if UNITY_EDITOR_OSX
@@ -83,12 +98,36 @@ namespace QuickEditor.ToolKit
 #endif
         }
 
-        [MenuItem(FolderOpenerMenuEntry + "Asset Backup Folder", false, FolderOpenerMenuEntryPriority + 300)]
-        public static void OpenAEBackupFolder()
+        [MenuItem(FolderOpenerMenuEntry + "InternalEditorUtility.unityPreferencesFolder", false, FolderOpenerMenuEntryPriority + 500)]
+        private static void OpenUnityPreferencesFolder()
         {
-            var folder = Path.Combine(Application.persistentDataPath, "AEBackup");
-            Directory.CreateDirectory(folder);
-            RevealInFinder(folder);
+            Debug.Log(InternalEditorUtility.unityPreferencesFolder);
+            RevealInFinder(InternalEditorUtility.unityPreferencesFolder);
+        }
+
+        [MenuItem(FolderOpenerMenuEntry + "InternalEditorUtility.GetCrashReportFolder()", false, FolderOpenerMenuEntryPriority + 501)]
+        private static void OpenCrashReportFolder()
+        {
+            Debug.Log(InternalEditorUtility.GetCrashReportFolder());
+            RevealInFinder(InternalEditorUtility.GetCrashReportFolder());
+        }
+
+        [MenuItem(FolderOpenerMenuEntry + "InternalEditorUtility.GetEditorAssemblyPath()", false, FolderOpenerMenuEntryPriority + 502)]
+        private static void OpenEditorAssemblyPath()
+        {
+            RevealInFinder(new FileInfo(InternalEditorUtility.GetEditorAssemblyPath()).Directory.FullName);
+        }
+
+        [MenuItem(FolderOpenerMenuEntry + "InternalEditorUtility.GetEngineAssemblyPath()", false, FolderOpenerMenuEntryPriority + 503)]
+        private static void OpenEngineAssemblyPath()
+        {
+            RevealInFinder(new FileInfo(InternalEditorUtility.GetEngineAssemblyPath()).Directory.FullName);
+        }
+
+        [MenuItem(FolderOpenerMenuEntry + "InternalEditorUtility.GetEngineCoreModuleAssemblyPath()", false, FolderOpenerMenuEntryPriority + 504)]
+        private static void OpenEngineCoreModuleAssemblyPath()
+        {
+            RevealInFinder(new FileInfo(InternalEditorUtility.GetEngineCoreModuleAssemblyPath()).Directory.FullName);
         }
 
         private const string ASSET_STORE_FOLDER_NAME = "Asset Store-5.x";

@@ -70,7 +70,7 @@ namespace Hananoki.EditorToolbar
                 IconRefresh = Icon.Get("Refresh");
 
 #if UNITY_2018_3_OR_NEWER
-				IconSettings = Icon.Get("Settings");
+                IconSettings = Icon.Get("Settings");
 #else
                 IconSettings = Icon.Get("SettingsIcon");
 #endif
@@ -301,7 +301,10 @@ namespace Hananoki.EditorToolbar
                 }
                 else
                 {
-                    EditorSceneManager.OpenScene(SceneManager.GetActiveScene().path);
+                    if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+                    {
+                        EditorSceneManager.OpenScene(SceneManager.GetActiveScene().path);
+                    }
                 }
             }
         }
@@ -324,7 +327,6 @@ namespace Hananoki.EditorToolbar
 
         private static void CreatePlatformMenus()
         {
-
             var cont = EditorHelper.TempContent(Array.Find(s_buildTargetInfo, x => x.group == UEditorUserBuildSettings.activeBuildTargetGroup).icon, S._OpenBuildSettings);
 
             Rect r = GUILayoutUtility.GetRect(cont, s_styles.DropDownButton, GUILayout.Width(50));
@@ -374,7 +376,7 @@ namespace Hananoki.EditorToolbar
                 var m = new GenericMenu();
                 m.AddItem(S._Preferences, false, () => UnityEditorMenu.Edit_Preferences());
 #if UNITY_2018_3_OR_NEWER
-				m.AddItem(S._ProjectSettings, false, () => UnityEditorMenu.Edit_Project_Settings());
+                m.AddItem(S._ProjectSettings, false, () => UnityEditorMenu.Edit_Project_Settings());
 #else
                 m.AddSeparator("");
                 m.AddItem(new GUIContent(S._Input), false, () => UnityEditorMenu.Edit_Project_Settings_Input());
